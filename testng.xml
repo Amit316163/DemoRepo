@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SuiteName">
+  <test  name="Demo_Test">
+    <classes>
+      <class name="com.testCases.CreateAccount1"/>
+      <class name="com.testCases.CreateAccount2"/>
+      <class name="com.testCases.CreateAccount3"/>
+      <class name="com.testCases.CreateAccount4"/>
+      <class name="com.testCases.CreateAccount5"/>
+      <class name="com.testCases.CreateAccount6"/>  
+      
+      <class name="com.testCases.CustomersFilters1"/>  
+      <class name="com.testCases.CustomersFilters2"/>  
+      <class name="com.testCases.CustomersFilters3"/>  
+      <class name="com.testCases.CustomersFilters4"/>    
+      
+        
+    </classes>
+    
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
