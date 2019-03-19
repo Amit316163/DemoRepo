@@ -13,36 +13,32 @@ public class CreateAccount1 extends BaseTest{
 	
 	@Test
 	public void CreateAccountTC() {
-		//Read value from your config properties file
-		
+		// Read value from your config properties file
 		loadConfig();
-		
 		launchbrowser(prop.getProperty("Browser"));
-		navigate(prop.getProperty("URL"));
-		waits(prop.getProperty("Users_xpath"));
-		
-		//Verify the condition
-		boolean b=driver.findElement(By.xpath("//*[@id='users']/a")).isDisplayed();
+		navigate("URL");
+	      //waits(prop.getProperty("Users_xpath"));
+		// Verify the condition
+		boolean b = getElement("Displayeduser_xpath").isDisplayed();
 		Assert.assertTrue(b, "User");
-		
-		//Create new user id with valid details
-		click(prop.getProperty("Users_xpath"));
-		click(prop.getProperty("NewUser_xpath"));
-		enterText("Username_id", "Username_value");
-		enterText("Password_id", "Password_value");
-		enterText("Email_id", "Email_value");
-		click(prop.getProperty("CreateUser_name"));
-		
-		//Validation point-Successfully user id is created 
-		String username= driver.findElement(By.xpath("PageTitle_id")).getText();
-		if(username.equalsIgnoreCase("Amit0777")) {
+		// Create new user id with valid details
+		click("Users_xpath");
+		click("NewUser_xpath");
+		enterText("Username_id", "Username_name");
+		enterText("Password_id", "Password_name");
+		enterText("Email_id", "test1234@hotmail.com");
+		click("CreateUser_name");
+
+		// Validation point-Successfully user id is created
+		String username = getElement("PageTitle_id").getText();
+		if (username.equalsIgnoreCase("Amit0777")) {
 			System.out.println("New user ID created successfully");
-		}else {
+		} else {
 			System.out.println("User ID creation failed");
 		}
-		
-		//Update address for New User 
-		click(prop.getProperty("AddressButton"));
+
+		// Update address for New User
+		click("AddressButton_xpath");
 		enterText("FullName_id", "Amit Singh");
 		enterText("AddressLine1_id", "10 wall st");
 		enterText("City_id", "Albany");
