@@ -72,11 +72,11 @@ public class BaseTest {
 	
 	//***locators***
 	public  WebElement getElement (String locatorkey) {
-		if(locatorkey.endsWith("xpath")) {
+		if(locatorkey.endsWith("_xpath")) {
 			return driver.findElement(By.xpath(prop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("ID")) {
+		}else if (locatorkey.endsWith("_ID")) {
 			return driver.findElement(By.id(prop.getProperty(locatorkey)));
-		}else if (locatorkey.endsWith("name")) {
+		}else if (locatorkey.endsWith("_name")) {
 			return driver.findElement(By.name(prop.getProperty(locatorkey)));
 		}else {
 			Assert.fail();
